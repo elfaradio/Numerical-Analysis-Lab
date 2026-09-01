@@ -1,4 +1,4 @@
-E = 0.005
+
 '''' you have to input function in this format:
 2x^3=== 2*x**3
 
@@ -8,6 +8,8 @@ an example:
 
 
 '''
+
+E = 0.005
 s = input("give me function : ")
 # print(s)
 a, b = map(float, input("give a,b : ").split())
