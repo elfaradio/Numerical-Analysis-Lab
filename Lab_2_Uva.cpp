@@ -4,7 +4,7 @@
 using namespace std;
 #define ll long long
 #define str string
-#define E 0.00005 // E 1e-7 dhorle uva te accepted
+#define E 1e-7 // E 1e-7 dhorle uva te accepted
 double p, q, r, s, tt, u;
 double fn(double x)
 {

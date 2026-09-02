@@ -4,17 +4,17 @@
 using namespace std;
 #define ll long long
 #define str string
-#define E 0.005
+
 double fn(double x)
 {
-    return x * x - 3;
+    return x * x * x - 9 * x + 1;
 }
 void solve()
 {
     // By Farhadul Islam
     // Only Brute Force Bhai
-    double a, b;
-    cin >> a >> b;
+    double a, b, E;
+    cin >> a >> b >> E;
     // corner
     if (fn(a) * fn(b) >= 0)
     {
@@ -25,7 +25,7 @@ void solve()
     while (fabs(b - a) >= E)
     {
         x = (a + b) / 2.0;
-        if (fabs(fn(x)) < E)
+        if (fabs(fn(x)) == 0.0)
         {
             break;
         }
@@ -39,7 +39,7 @@ void solve()
         }
     }
     x = (a + b) / 2.0;
-    cout << "Root: " << x << endl;
+    cout << "Root: " << fixed << setprecision(3) << x << endl;
 }
 int32_t main()
 {
