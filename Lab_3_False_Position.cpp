@@ -4,42 +4,45 @@
 using namespace std;
 #define ll long long
 #define str string
-
+#define E 0.0005
 double fn(double x)
 {
-    return (x * x * x) - (6 * x) + 4;
+    return (x * x * x) - (7 * x) + 4;
 }
 void solve()
 {
     // By Farhadul Islam
     // Only Brute Force Bhai
-    double a, b, E;
-    cin >> a >> b >> E;
-    // corner
-    if (fn(a) * fn(b) >= 0)
+    double a, b;
+    cin >> a >> b;
+    if (fn(a) * fn(b) > 0)
     {
-        cout << "Wrong Interval\n";
+        cout << "Invalid" << endl;
         return;
     }
-    double x = 0.0;
-    while (fabs(b - a) >= E)
+    double px = 0.0, prx = 0.0;
+
+    while (1)
     {
-        x = (a + b) / 2.0;
-        if (fabs(fn(x)) == 0.0)
+
+        px = a - ((fn(a) * (b - a)) / (fn(b) - fn(a)));
+        // cout << px << endl;
+        if (fabs(px - prx) < E)
         {
             break;
         }
-        else if ((fn(x) * fn(b)) > 0)
+        if (fn(px) * fn(a) < 0)
         {
-            b = x;
+            b = px;
         }
         else
         {
-            a = x;
+            a = px;
         }
+
+        prx = px;
     }
-    x = (a + b) / 2.0;
-    cout << "Root: " << fixed << setprecision(3) << x << endl;
+    cout << fixed << setprecision(3) << "Root: " << px << endl;
 }
 int32_t main()
 {
