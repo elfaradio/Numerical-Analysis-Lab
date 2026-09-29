@@ -4,15 +4,15 @@
 using namespace std;
 #define ll long long
 #define str string
-#define E 0.005
+#define E 0.05
 double f(double x)
 {
-    return (x * x) - (3 * x) + 2;
+    return (x * x * x) - (4 * x) - 9;
 }
 
 double der(double x)
 {
-    return (2 * x) - 3;
+    return (3 * x * x) - 4;
 }
 
 void solve()
@@ -31,6 +31,7 @@ void solve()
             return;
         }
         //
+        cout << x1 << " " << f(x0) << " " << der(x0) << " ";
 
         x1 = x0 - f(x0) / der(x0);
         cout << x1 << endl;
@@ -42,7 +43,7 @@ void solve()
         x0 = x1;
     }
 
-    cout << fixed << setprecision(3);
+    cout << fixed << setprecision(2);
     cout << "Root = " << x1 << '\n';
 }
 int32_t main()
