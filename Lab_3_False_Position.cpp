@@ -26,7 +26,8 @@ void solve()
     {
 
         px = a - ((fn(a) * (b - a)) / (fn(b) - fn(a)));
-        // cout << px << endl;
+        cout << px << endl;
+        cout << fn(px) << endl;
         if (fabs(px - prx) < E)
         {
             break;

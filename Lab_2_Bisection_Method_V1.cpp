@@ -7,7 +7,7 @@ using namespace std;
 
 double fn(double x)
 {
-    return (x * x * x) - (6 * x) + 4;
+    return (5 * x * x * x) + (11 * x) - 17;
 }
 void solve()
 {

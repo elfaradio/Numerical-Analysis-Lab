@@ -5,7 +5,7 @@ using namespace std;
 
 double f(double x)
 {
-    return (x * x) - (4 * x) - 10;
+    return (2 * x * x * x) - (2 * x) - 5;
 }
 
 void solve()
