@@ -28,7 +28,7 @@ void solve()
             {
                 x = (a + b) / 2.0;
 
-                if ((fn(x) * fn(b)) > 0)
+                if ((fn(x) * fn(a)) < 0)
                 {
                     b = x;
                 }
